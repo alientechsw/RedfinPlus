@@ -1,0 +1,13 @@
+colorama
+fake_useragent
+geopy
+matplotlib
+numpy
+pyclipper
+pyodbc
+pyopenssl
+python-dotenv
+scipy
+selenium
+sklearn
+tqdm

@@ -3,3 +3,5 @@
 /.vscode
 /.idea
 .pyc
+.cache
+.generated

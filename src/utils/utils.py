@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import os
 import logging
 import time
@@ -125,7 +127,7 @@ def get_long_state(short_state):
 
 def get_short_state(long_state):
     for s in STATE_APP:
-        if short_state.lower() == s[0].lower():
+        if long_state.lower() == s[0].lower():
             return s[1]
     return ""
 
