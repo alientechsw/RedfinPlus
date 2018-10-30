@@ -2,6 +2,6 @@
 /.venv
 /.vscode
 /.idea
-.pyc
+*.pyc
 .cache
 .generated
