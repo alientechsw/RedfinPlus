@@ -1,5 +1,6 @@
 colorama
 fake_useragent
+futures
 geopy
 matplotlib
 numpy

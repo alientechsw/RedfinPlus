@@ -1,0 +1,17 @@
+[
+    {
+      "name":"Marymoor Park",
+      "loc":[47.6663953,-122.1175915],
+      "importance":10
+    },
+    {
+      "name":"Saint Edward State Park",
+      "loc":[47.7321768,-122.2607462],
+      "importance":5
+    },
+    {
+      "name":"Cottage Lake Park",
+      "loc":[47.7556608,-122.0867282],
+      "importance":5
+    }
+]  
