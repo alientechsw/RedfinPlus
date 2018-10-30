@@ -43,7 +43,7 @@ function httpGetAsync(theUrl, callback)
 
 function httpGet(theUrl)
 {
-    debugger;
+    // debugger;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -112,11 +112,16 @@ function HandleHouse() {
     spotcrime.innerHTML = "<H2>spotcrime</H2><IFRAME width='100%' height='500' src='https://spotcrime.com/"+spotcrime_sub_path+"'/>"
     parent.appendChild(spotcrime);
 
-    var my_score = document.createElement("DIV");
-    // Since my local server is http, it can't load inside the https://redfin without security exception
-    // please turn on the "load dangerous script" see: https://groups.google.com/a/chromium.org/forum/#!topic/chromium-discuss/8QvDA6p3YoI
-    my_score.innerHTML = "<A href='https://localhost:8000/HTMLScoreByURL" + location.pathname+"'><H2>My Score</H2></A><IFRAME width='100%' height='500' src='https://localhost:8000/HTMLScoreByURL" + location.pathname+"'/>";
-    parent.appendChild(my_score);
+    var local_service_response = httpGet("https://localhost:8000/HTMLScoreByURL" + location.pathname);
+    if(!local_service_response.search("404"))
+    {
+        console.log(local_service_response);
+        var my_score = document.createElement("DIV");
+        // Since my local server is http, it can't load inside the https://redfin without security exception
+        // please turn on the "load dangerous script" see: https://groups.google.com/a/chromium.org/forum/#!topic/chromium-discuss/8QvDA6p3YoI
+        my_score.innerHTML = "<A href='https://localhost:8000/HTMLScoreByURL" + location.pathname+"'><H2>My Score</H2></A><IFRAME width='100%' height='500' src='https://localhost:8000/HTMLScoreByURL" + location.pathname+"'/>";
+        parent.appendChild(my_score);
+    }
 };
 
 var HandleFavoritesBusy = false
