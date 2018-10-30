@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
-import hashlib
-import urllib
-import urllib2
-import datetime
-import logging
 import csv
+import datetime
+import hashlib
+import logging
+import math
+import os
 import socket
 import time
-import math
-from random import randint
+import urllib
+import urllib2
 from fake_useragent import UserAgent
+from random import randint
 
 SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))
 CACHE_PATH = os.path.join(SCRIPT_PATH, '.cache')

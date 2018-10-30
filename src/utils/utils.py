@@ -1,17 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
-import logging
-import time
+"""
+This script contains a collection of GIS helper methods. the one I use the most are:
+
+    LocationDistance: It returnes the shortest arch between two locations.
+                      This is not an accurate commute time and distance, but with google maps
+                      becomming non-free, it is a good approximation.
+"""
 import math
 import matplotlib.patches as patches
-import pylab
+import os
 import pyclipper
-from random import randint
+import pylab
+import time
 from geopy.distance import great_circle
 from geopy.geocoders import Nominatim
 
-NOMINATIM_APP_NAME = "RedfinPlusUtil"
+MS_IN_A_DAY = 1000.0 * 60.0 * 60.0 * 24.0
 
 def LocationDistance(loc1, loc2):
     """
@@ -25,6 +30,7 @@ def AddressToLocation(address):
     This doesn't always work, and I was wondering if I need another service. Google is no longer free
     So until a better choice is available I'm stuck with OpenStreetMap
     """
+    NOMINATIM_APP_NAME = "RedfinPlusUtil"
     geolocator = Nominatim(user_agent=NOMINATIM_APP_NAME)
     location = geolocator.geocode(address, timeout=10, exactly_one=True)
     if location is None or len(location) == 0:
