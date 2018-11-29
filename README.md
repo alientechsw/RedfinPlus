@@ -7,6 +7,19 @@ This [RedfinPlus][rf+url] is a [Python 2.7][py-url] wrapper for [redfin.com][rf-
 
 more details on the Redfin REST API is in the [docs](./docs/README.md) folder
 
+# Development
+install a virtual envirnoment and load the requirements with the following commands
+```
+pip install --upgrade virtualenv
+virtualenv .venv
+pip install -r src\requirments.txt
+```
+
+you may run the tests with 
+```
+python src\HouseScore_tests.py
+```
+
 [rf+url]:https://github.com/AlienTechSoftware/RedfinPlus
 [rf-url]:http://www.redfin.com
 [rf-dc]:https://www.redfin.com/blog/data-center
