@@ -100,12 +100,16 @@ class HouseScore_tests(unittest.TestCase):
 
         groups = house_score.ClusterHouses(results, plot_groups=False)
         self.assertIsNotNone(groups)
-        self.assertNotEqual(len(groups), 0)        
+        self.assertNotEqual(len(groups), 0)  
 
+    def test_SearchForZIPCodes(self):      
+        house_score = HouseScore()
+        results = HouseScore_tests.SearchForZIPCodes(house_score)
+        self.assertIsNotNone(results)
+        self.assertNotEqual(len(results), 0)   
 
 if __name__ == '__main__':
-    LOG_PATH = os.path.join(CACHE_PATH, '{}.log'.format(datetime.datetime.now().strftime("%Y%m%d")))
-
+    logging.getLogger().setLevel(logging.DEBUG)
     if not os.path.exists(CACHE_PATH):
         os.mkdir(CACHE_PATH)
     if not os.path.exists(OUTPUT_DIR):
